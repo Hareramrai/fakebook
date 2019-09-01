@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   has_many :posts
+  has_many :likes
 
   def name
     "#{first_name} #{last_name}"

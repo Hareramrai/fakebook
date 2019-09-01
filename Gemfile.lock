@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    action-cable-testing (0.6.0)
+      actioncable (>= 5.0)
     actioncable (5.1.7)
       actionpack (= 5.1.7)
       nio4r (~> 2.0)
@@ -99,6 +101,7 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hash_dot (2.4.2)
     hashie (3.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -285,6 +288,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action-cable-testing
   brakeman
   byebug
   capybara (~> 2.13)
@@ -296,6 +300,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  hash_dot
   jbuilder (~> 2.5)
   jquery-fileupload-rails
   listen (>= 3.0.5, < 3.2)

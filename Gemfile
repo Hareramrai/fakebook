@@ -59,6 +59,8 @@ group :development, :test do
   gem 'faker'
   gem 'rails-controller-testing'
   gem 'dotenv-rails'
+  gem 'hash_dot'
+  gem 'action-cable-testing'
 end
 
 group :development do

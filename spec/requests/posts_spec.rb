@@ -20,7 +20,7 @@ RSpec.describe 'Posts Controller', type: :request do
     end
   end
 
-  describe 'POST /projects with valid session' do
+  describe 'POST /posts with valid session' do
     before { login_as(user, :scope => :user)  }
 
     describe 'when the request is valid' do

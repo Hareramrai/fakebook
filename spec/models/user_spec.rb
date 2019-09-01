@@ -18,4 +18,16 @@ RSpec.describe User, type: :model do
     subject  { user.name }
     it { should eq("#{user.first_name} #{user.last_name}") }
   end
+
+  describe '.from_omniauth' do 
+    let(:request) { Faker::Omniauth.google.to_dot }
+
+    it 'creates a new user with logged in status' do 
+      user = User.from_omniauth(request)
+
+      expect(user).to be_persisted 
+      expect(user).to be_a(User)
+      expect(user.logged_in).to be_truthy
+    end
+  end
 end

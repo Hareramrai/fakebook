@@ -23,6 +23,9 @@
       <ul class="navbar-nav col-xs-7">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+        <li id="post_like_<%= post.id%>">
+          <%= post_like_link(post) %>
+        </li>
       </ul>
     </div>
   </div>
