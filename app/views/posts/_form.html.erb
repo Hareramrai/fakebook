@@ -1,0 +1,32 @@
+<%= form_for Post.new, :html => { :multipart => true, :id => "new_post_form"  } do |f| %>
+  <div class="col-xs-12 col-sm-7 col-md-offset-2" id="new_status">
+    <ul class="navbar-nav col-xs-12" id="post_header" role="navigation">
+      <li>
+        <label class="btn-link btn">
+          <span class="glyphicon glyphicon-picture"></span> Add Photos/Video
+          <%= f.file_field :images, class: 'hidden', multiple: true %>
+        </label> 
+      </li>
+    </ul>
+
+    <div class="col-xs-12" id="post_content">
+      <%= image_tag current_user.profile_image, class: 'col-xs-1 profile-img-lg img-circle'  %>
+      <div class="textarea_wrap">
+        <%= f.text_area :title, placeholder: "What's on your mind?", class: "col-xs-11" %>
+      </div>
+      <div class="row" id="image_preview"></div>
+    </div>
+
+    <div class="col-xs-12" id="post_footer">
+      <ul class="navbar-nav col-xs-7">
+        <li><a href="#"><span class="glyphicon glyphicon-camera"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+      </ul>
+
+      <div class="col-xs-5">
+        <button class="btn btn-primary">Post</button>
+      </div>
+    </div>
+  </div>
+<% end %>

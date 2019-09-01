@@ -1,0 +1,29 @@
+<div class="col-xs-12 post_container">
+  <div class="col-xs-12" id="post_content">
+    <div class="row">
+      <div class="profile-img-container">
+         <%= image_tag post.user_profile_image, class: 'profile-img-lg img-circle'  %> 
+      </div>
+      <div class="row col-xs-10 post-user-title">
+        <span class="btn btn-link"> <%= post.user_name %> </span>
+        <span class="time"> 
+          <%= time_ago_in_words post.created_at %>
+        </span>
+      </div>
+    </div>
+
+    <div class="textarea_wrap">
+      <%= post.title %>
+    </div>
+
+    <div class="row" id="image_preview">
+      <%= render post.photos %>
+    </div>
+    <div class="col-xs-12" id="post_footer">
+      <ul class="navbar-nav col-xs-7">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

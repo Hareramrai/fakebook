@@ -1,0 +1,42 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#posts-container {
+  background-color: #FFF;
+  font-family: 'Helvetica Neaue', 'Helvetica', sans-serif;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.post_container {
+  border-radius: 5px;
+  box-shadow: 1px 0 10px #AAA;
+  margin-bottom: 1rem
+}
+
+.post-user-title {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.38;
+  margin: 1.25rem 0;
+  text-align: left;
+  text-decoration: none !important;
+  padding-left: 0px;
+
+  .time {
+    color: rgb(97, 103, 112);
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 15px;
+  }
+}
+
+.profile-img-container {
+  margin: 0 15px 0 -15px;
+  padding: 0 0px 0 15px;
+  width: 60px;
+  display: inline-block;
+  float: left;
+}
