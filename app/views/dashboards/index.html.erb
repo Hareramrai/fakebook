@@ -1,0 +1,57 @@
+<div class="row">
+
+  <div id="likes_by_user" class="chart col-md-6">
+  </div>
+
+  <div id="likes_by_post" class="chart col-md-6">
+  </div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<%= javascript_tag do -%>
+
+  google.charts.load('current', {'packages':['corechart']});
+
+  google.charts.setOnLoadCallback(drawUserLikes);
+
+  function drawChart(data, options) {
+    var chart = new google.visualization.PieChart(document.getElementById(options.element));
+    chart.draw(data, options);
+  }
+
+  function drawUserLikes() {
+    var data = JSON.parse('<%= @users.map { |user| [ user.first_name, user.likes_count] }.to_json.html_safe -%>');
+    data = [['First Name', 'Number of Likes']].concat(data);
+    data = google.visualization.arrayToDataTable(data);
+
+    var options = {
+      title: 'Likes by User',
+      element: 'likes_by_user'
+    };
+
+    drawChart(data, options)
+  }
+<% end -%>
+
+<%= javascript_tag do -%>
+
+  google.charts.load('current', {'packages':['corechart']});
+
+  google.charts.setOnLoadCallback(drawPostLikes);
+
+  function drawPostLikes() {
+
+    var data = JSON.parse('<%= @posts.map { |post| [ post.id.to_s, post.likes_count] }.to_json.html_safe -%>');
+    data = [['Post Id', 'Number of Likes']].concat(data);
+    data = google.visualization.arrayToDataTable(data);
+
+    var options = {
+      title: 'Likes by Post',
+      element: 'likes_by_post'
+    };
+
+    drawChart(data, options)
+  }
+
+<% end -%>

@@ -7,6 +7,13 @@ Rails.application.routes.draw do
     resources :likes, only: :create
   end
 
+  resources :dashboards, only: :index do 
+    collection do 
+      get :currently_loggedin
+      get :post_likes
+    end
+  end
+
   # devise_for :users
   root to: 'home#index'
 end

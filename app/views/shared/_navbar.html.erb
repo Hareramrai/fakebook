@@ -9,10 +9,21 @@
     <%= link_to "Fakebook", posts_path, class: "navbar-brand" %>
     
     <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
-        <li></li>
-      </ul>
       <% if current_user %>
+
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span style="font-size: 13px;"> Dashboard </span> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Report", dashboards_path %></li>
+              <li><%= link_to "Currently Loggedin", currently_loggedin_dashboards_path %></li>
+              <li><%= link_to "Post Likes", post_likes_dashboards_path %> </li>
+            </ul>
+          </li>
+        </ul>
+
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
