@@ -114,7 +114,7 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       sassc
-    json (2.2.0)
+    json (2.3.1)
     jwt (2.2.1)
     less (2.6.0)
       commonjs (~> 0.2.7)
